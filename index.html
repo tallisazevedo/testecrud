@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Residência</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Residências</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('cadastrar')">Cadastrar Casa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('atualizar')">Atualizar Casa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('remover')">Remover Casa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('buscar')">Buscar Casa</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div id="cadastrar" class="content-section">
+            <h2>Cadastrar Casa</h2>
+            <form id="cadastrar-form">
+                <div class="form-group">
+                    <label for="nome-casa">Nome da Casa:</label>
+                    <input type="text" class="form-control" id="nome-casa" name="nome-casa" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome-proprietario">Nome do Proprietário:</label>
+                    <input type="text" class="form-control" id="nome-proprietario" name="nome-proprietario" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero-contato">Número para Contato:</label>
+                    <input type="tel" class="form-control" id="numero-contato" name="numero-contato" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" required>
+                    <input type="number" class="form-control mt-2" id="numero" name="numero" placeholder="Número" required>
+                    <input type="text" class="form-control mt-2" id="cep" name="cep" placeholder="CEP" required>
+                    <input type="text" class="form-control mt-2" id="complemento" name="complemento" placeholder="Complemento">
+                </div>
+                <button type="submit" class="btn btn-success">Cadastrar</button>
+            </form>
+        </div>
+
+        <div id="atualizar" class="content-section">
+            <h2>Atualizar Casa</h2>
+            <form id="atualizar-form">
+                <div class="form-group">
+                    <label for="id-update">ID da Casa:</label>
+                    <input type="text" class="form-control" id="id-update" name="id-update" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome-casa-update">Nome da Casa:</label>
+                    <input type="text" class="form-control" id="nome-casa-update" name="nome-casa-update" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome-proprietario-update">Nome do Proprietário:</label>
+                    <input type="text" class="form-control" id="nome-proprietario-update" name="nome-proprietario-update">
+                </div>
+                <div class="form-group">
+                    <label for="numero-contato-update">Número para Contato:</label>
+                    <input type="tel" class="form-control" id="numero-contato-update" name="numero-contato-update">
+                </div>
+                <div class="form-group">
+                    <label for="endereco-update">Endereço:</label>
+                    <input type="text" class="form-control" id="rua-update" name="rua-update" placeholder="Rua">
+                    <input type="number" class="form-control mt-2" id="numero-update" name="numero-update" placeholder="Número">
+                    <input type="text" class="form-control mt-2" id="cep-update" name="cep-update" placeholder="CEP">
+                    <input type="text" class="form-control mt-2" id="complemento-update" name="complemento-update" placeholder="Complemento">
+                </div>
+                <button type="submit" class="btn btn-warning">Atualizar</button>
+            </form>
+        </div>
+
+        <div id="remover" class="content-section">
+            <h2>Remover Casa</h2>
+            <form id="remover-form">
+                <div class="form-group">
+                    <label for="id-remove">ID da Casa:</label>
+                    <input type="text" class="form-control" id="id-remove" name="id-remove" required>
+                </div>
+                <button type="submit" class="btn btn-danger">Remover</button>
+            </form>
+        </div>
+
+        <div id="buscar" class="content-section">
+            <h2>Buscar Casa</h2>
+            <input type="text" class="form-control" id="search" placeholder="Buscar por nome da casa ou do proprietário">
+            <ul id="buscar-list" class="list-group mt-3">
+                <!-- List of houses will be generated here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
